@@ -1,6 +1,6 @@
 DB_URI =
   "mongodb+srv://hzamil:Vl3LTL5l9gMqToGw@assignment14.yv0nyus.mongodb.net/next-auth";
-BASE_URL = "http://localhost:3000/";
+
 API = "http://localhost:3000/api";
 
 //mongo pass Vl3LTL5l9gMqToGw;

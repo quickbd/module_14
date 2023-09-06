@@ -10,7 +10,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [mailBody, setMailBody] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -37,7 +37,9 @@ export default function Register() {
       toast.success(data.success);
 
       //send mail
-      const vlink = `${process.env.BASE_URL}/registation_verification?verification_token=${verification_token}`;
+      const vlink = `${process.env.API}registation_verification?verification_token=${verification_token}`;
+      const mailBody = `Please click the link below to verify your email address.<br><br> Verify link: <a href=${vlink}>Verified Link</a><br><br>Thank you`;
+      setMailBody(vlink);
       const sendmail = await fetch(`${process.env.API}/email`, {
         method: "POST",
         headers: {
@@ -46,13 +48,13 @@ export default function Register() {
         body: JSON.stringify({
           mailto: email,
           subject: "Email Verificarion",
-          mailbody: `Please click the link below to verify your email address.<br><br> Verify link: <a href=${vlink}>Verified Link</a><br><br>Thank you`,
+          mailbody: mailBody,
         }),
       });
 
       ///end mail////
       setLoading(false);
-      router.push("/admin/login");
+      //router.push("/admin/login");
     } catch (err) {
       console.log(err);
       setLoading(false);
@@ -67,6 +69,8 @@ export default function Register() {
         dark:bg-[url('/images/map-dark.svg')]"
         >
           <div className="panel m-6 w-full max-w-lg sm:w-[480px]">
+            <div className="alert alert-danger bg-danger">{mailBody}</div>
+
             <h2 className="mb-3 text-2xl font-bold">Sign Up</h2>
             <p className="mb-7">
               Enter your name, email and password to register

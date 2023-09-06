@@ -11,7 +11,7 @@ export default function Login() {
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
   const handleSubmit = async (e) => {
     e.preventDefault();
     const callbackurl = "/admin";
@@ -50,7 +50,7 @@ export default function Login() {
             <p className="mb-7">Enter your email and password to login</p>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label for="email">Email</label>
+                <label for="email">Email (admin@gmail.com)</label>
                 <input
                   id="email"
                   type="email"
@@ -60,7 +60,7 @@ export default function Login() {
                 />
               </div>
               <div>
-                <label for="password">Password</label>
+                <label for="password">Password (123123)</label>
                 <input
                   id="password"
                   type="password"
@@ -72,9 +72,7 @@ export default function Login() {
               <div>
                 <label className="cursor-pointer">
                   <input type="checkbox" className="form-checkbox" />
-                  <span className="text-white-dark">
-                    Subscribe to weekly newsletter
-                  </span>
+                  <span className="text-white-dark">Remember me</span>
                 </label>
               </div>
 

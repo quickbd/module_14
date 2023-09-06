@@ -1,34 +1,23 @@
+import { withAuth } from "next-auth/middleware";
+// export { default } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: [
-    "/myaccount/:path*",
-    "/admin/:path*",
-    "/api/user/:path*",
-    "/api/myaccount/:path*",
-  ],
+  matcher: ["/admin/myapp/:path*", "/api/admin/:path*"],
 };
 
-export default async function middleware(req) {
-  const token = req.cookies.get("token");
+// role based authorization
+export default withAuth(async function middleware(req) {
   const url = req.nextUrl.pathname;
-  const session = !!req.cookies.get("next-auth.session-token");
-
-  const roles = process.env.ADMIN_ROLES; //["admin", "super-admn", "manager"];
   const userRole = req?.nextauth?.token?.user?.role;
-  //console.log(roles[0]);
-  if (url.startsWith("/admin/myapp")) {
-    if (!session || !roles.includes(userRole)) {
-      console.log("admin");
-      return NextResponse.redirect(new URL("/admin/login", req.url));
-    } else if (session) {
-      return NextResponse.next();
-    } else {
-      return NextResponse.redirect(new URL("/admin/login", req.url));
-    }
+  const roles = process.env.ADMIN_ROLES;
+  console.log(roles);
+  // cors
+  if (url?.includes("/api")) {
+    NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
   }
-  if (url.startsWith("/api/example2")) {
-    console.log("example2");
-    return NextResponse.next();
+
+  if (url?.includes("/admin/myapp") && roles.includes(userRole)) {
+    return NextResponse.redirect(new URL("/admin/login", req.url));
   }
-}
+});

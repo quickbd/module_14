@@ -4,6 +4,7 @@ import smtpTransport from "nodemailer-smtp-transport";
 
 export async function POST(req, res) {
   const reqBody = await req.json();
+
   let ToEmail = reqBody.mailto;
   let subject = reqBody.subject;
   let mailbody = reqBody.mailbody;

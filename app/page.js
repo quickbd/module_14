@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 export default function Home() {
   return (
@@ -11,9 +12,21 @@ export default function Home() {
           <Link href="/admin/register" className="btn btn-primary    mb-3 ">
             Registration
           </Link>
-          <Link href="/admin/myapp" className="btn btn-danger ">
+          <Link href="/admin/" className="btn btn-danger ">
             My Account
           </Link>
+          <div className="my-5 text-left">
+            <p>
+              My app is connected with Mongo DB. After registration a
+              verification mail will send to your mail.{" "}
+            </p>
+
+            <p className="my-5">
+              If you faild to recived mail, I have display verification link for
+              test purpose. <br></br>After clicking verification - redirect to
+              login
+            </p>
+          </div>
         </div>
       </div>
     </main>
