@@ -1,12 +1,8 @@
  
 মডিউল ১৪ এর এসাইনমেন্ট (Next.js Back-End & Securities)
  
-
-API Documention : https://documenter.getpostman.com/view/9518923/2s946mZ9Zw
-
-
  
-Assignment Link: https://module-12-blog.vercel.app/
+Assignment Link: https://module-14-9lyz.vercel.app/
 
  
 Requirements:
