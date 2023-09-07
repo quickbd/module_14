@@ -1,7 +1,7 @@
 DB_URI =
   "mongodb+srv://hzamil:Vl3LTL5l9gMqToGw@assignment14.yv0nyus.mongodb.net/next-auth";
 
-API = "http://localhost:3000/api";
+API = "https://module-14-9lyz.vercel.app/api";
 
 //mongo pass Vl3LTL5l9gMqToGw;
 
