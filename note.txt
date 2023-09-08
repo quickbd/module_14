@@ -4,7 +4,9 @@
  
 Assignment Link: https://module-14-9lyz.vercel.app/
 
- 
+MongoDB Connection String: mongodb+srv://hzamil:Vl3LTL5l9gMqToGw@assignment14.yv0nyus.mongodb.net/
+
+
 Requirements:
 
 
@@ -31,7 +33,6 @@ Develop a middleware that sets an authentication token in the HTTP headers of re
  
 
 Passing Token with Middleware:
- 
 
 
 Create middleware that intercepts incoming requests to protected routes.
