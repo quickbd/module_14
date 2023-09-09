@@ -11,7 +11,21 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [mailBody, setMailBody] = useState("");
+  async function sendEmail(mailObj) {
+    let sendmail = await fetch(`${process.env.API}/email`, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+      },
+      body: JSON.stringify(mailObj),
+    });
+    const json = await sendmail.json();
+    console.log(json);
+  }
+
   const router = useRouter();
+
+  //send mail
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,24 +51,18 @@ export default function Register() {
       toast.success(data.success);
 
       //send mail
-      const vlink = `${process.env.API}registation_verification?verification_token=${verification_token}`;
+      const vlink = `${process.env.API}/registation_verification?verification_token=${verification_token}`;
       const mailBody = `Please click the link below to verify your email address.<br><br> Verify link: <a href=${vlink}>Verified Link</a><br><br>Thank you`;
-      setMailBody(vlink);
-      const sendmail = await fetch(`${process.env.API}/email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          mailto: email,
-          subject: "Email Verificarion",
-          mailbody: mailBody,
-        }),
-      });
+      const mailObj = {
+        mailto: email,
+        subject: "Email Verificarion",
+        mailbody: mailBody,
+      };
+      sendEmail(mailObj);
 
       ///end mail////
       setLoading(false);
-      //router.push("/admin/login");
+      router.push("/admin/login");
     } catch (err) {
       console.log(err);
       setLoading(false);
@@ -77,7 +85,7 @@ export default function Register() {
             </p>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input
                   id="name"
                   type="text"
@@ -88,7 +96,7 @@ export default function Register() {
               </div>
 
               <div>
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   id="email"
                   type="email"
@@ -99,7 +107,7 @@ export default function Register() {
               </div>
 
               <div>
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input
                   id="password"
                   type="password"

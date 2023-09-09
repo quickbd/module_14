@@ -5,6 +5,9 @@ import smtpTransport from "nodemailer-smtp-transport";
 export async function POST(req, res) {
   const reqBody = await req.json();
 
+  console.log("_req => ", reqBody);
+  // const { searchParams } = new URL(req.url);
+
   let ToEmail = reqBody.mailto;
   let subject = reqBody.subject;
   let mailbody = reqBody.mailbody;
@@ -12,6 +15,7 @@ export async function POST(req, res) {
   //const { searchParams } = new URL(req.url);
   // let ToEmail = searchParams.get("email");
   console.log(ToEmail);
+
   //Transporter
   const transporter = nodemailer.createTransport(
     smtpTransport({

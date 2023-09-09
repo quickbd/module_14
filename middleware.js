@@ -3,7 +3,7 @@ import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/admin/myapp/:path*", "/api/:path*"],
+  matcher: ["/admin/myapp/:path*"],
 };
 
 // role based authorization
@@ -15,7 +15,7 @@ export default withAuth(async function middleware(req) {
   // cors
   if (url?.includes("/api")) {
     // console.log(roles);
-    // NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+    NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
     return NextResponse.next();
   }
 
