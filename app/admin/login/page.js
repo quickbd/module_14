@@ -14,7 +14,7 @@ export default function Login() {
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const callbackurl = "/admin";
+    const callbackurl = "/admin/myapp";
     try {
       setLoading(true);
       const result = await signIn("credentials", {
