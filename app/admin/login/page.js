@@ -1,5 +1,5 @@
 "use client";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -9,7 +9,13 @@ export default function Login() {
   const [password, setPassword] = useState("Teat@quickbd.net");
   const [loading, setLoading] = useState(false);
 
+  let session = useSession();
+  let status = session.status;
   const router = useRouter();
+  if (status != "unauthenticated") {
+    router.replace("/admin");
+  }
+
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
   const handleSubmit = async (e) => {
