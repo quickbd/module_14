@@ -5,7 +5,7 @@ export default function MyApp(params) {
   let session = useSession();
   let status = session.status;
   const router = useRouter();
-  if (status == "unauthenticated") {
+  if (status !== "authenticated") {
     router.replace("/admin/login");
   }
 

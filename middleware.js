@@ -7,19 +7,30 @@ export const config = {
 };
 
 // role based authorization
-export default withAuth(async function middleware(req) {
-  const url = req.nextUrl.pathname;
-  const userRole = req?.nextauth?.token?.user?.role;
-  const roles = process.env.ADMIN_ROLES;
+export default withAuth(
+  async function middleware(req) {
+    const url = req.nextUrl.pathname;
+    const userRole = req?.nextauth?.token?.user?.role;
+    const roles = process.env.ADMIN_ROLES;
 
-  // cors
-  if (url?.includes("/api")) {
-    // console.log(roles);
-    NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
-    return NextResponse.next();
-  }
+    // cors
+    if (url?.includes("/api")) {
+      // console.log(roles);
+      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+      return NextResponse.next();
+    }
 
-  if (url?.includes("/admin/myapp") && roles.includes(userRole)) {
-    return NextResponse.redirect(new URL("/admin/login", req.url));
+    if (url?.includes("/admin/myapp") && roles.includes(userRole)) {
+      return NextResponse.redirect(new URL("/admin/login", req.url));
+    }
+  },
+  {
+    callbacks: {
+      authorized: ({ token }) => {
+        if (!token) {
+          return false;
+        }
+      },
+    },
   }
-});
+);

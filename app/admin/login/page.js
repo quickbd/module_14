@@ -12,12 +12,12 @@ export default function Login() {
   let session = useSession();
   let status = session.status;
   const router = useRouter();
-  if (status != "unauthenticated") {
+  if (status == "authenticated") {
     router.replace("/admin");
   }
 
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
+  const callbackUrl = searchParams.get("callbackUrl") || "/admin/myapp";
   const handleSubmit = async (e) => {
     e.preventDefault();
     const callbackurl = "/admin/myapp";
