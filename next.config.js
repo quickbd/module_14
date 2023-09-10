@@ -2,7 +2,7 @@
 const config = require("./config");
 const nextConfig = {
   env: {
-    BASE_URL: "https://module-14-9lyz.vercel.app/",
+    BASE_URL: "https://module-14-9lyz-ocfa8efd4-quickbd.vercel.app/",
     DB_URI: config.DB_URI,
     API: config.API,
     NEXTAUTH_SECRET: config.NEXTAUTH_SECRET,
@@ -14,7 +14,7 @@ const nextConfig = {
   },
 
   // distDir: "build",
-  reactStrictMode: true,
+  reactStrictMode: false,
   headers() {
     return [
       {
