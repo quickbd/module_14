@@ -8,7 +8,7 @@ export async function GET(req, res) {
   try {
     const verification_token = searchParams.get("verification_token");
     let dbUser = await User.findOne({ verification_token: verification_token });
-
+    dbUser.verification_status = "Active";
     return NextResponse.json({ msg: "okay" });
   } catch (err) {
     console.log(err);

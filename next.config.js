@@ -2,7 +2,7 @@
 const config = require("./config");
 const nextConfig = {
   env: {
-    BASE_URL: "https://module-14-tau.vercel.app/",
+    BASE_URL: "https://module-14-qrq19tzkh-quickbd.vercel.app/",
     DB_URI: config.DB_URI,
     API: config.API,
     NEXTAUTH_SECRET: config.NEXTAUTH_SECRET,
