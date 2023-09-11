@@ -132,7 +132,7 @@ export default function Register() {
               >
                 {loading ? "Please wait..." : "Submit"}
               </button>
-              <p>Note: Afer Registration, You will get a verification Mail</p>
+              <p>Note: After Registration, You will get a verification Mail</p>
             </form>
             <div className="relative my-7 h-5 text-center before:absolute before:inset-0 before:m-auto before:h-[1px] before:w-full before:bg-[#ebedf2] dark:before:bg-[#253b5c]">
               <div className="relative z-[1] inline-block bg-white px-2 font-bold text-white-dark dark:bg-[#0e1726]">
