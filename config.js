@@ -3,7 +3,7 @@ DB_URI =
 
 API = "https://module-14-tau.vercel.app/api";
 
-//mongo pass Vl3LTL5l9gMqToGw;
+//mongo pass Vl3LTL5l9gMqToGw; mongodb+srv://hzamil:YgmOqyyk2DaWYmcK@nextauth.cl715ek.mongodb.net
 
 NEXTAUTH_SECRET = "mhz226136228R234U90R03U28938H";
 GOOGLE_CLIENT_ID =
