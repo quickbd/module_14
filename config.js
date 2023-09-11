@@ -1,7 +1,7 @@
 DB_URI =
   "mongodb+srv://hzamil:YgmOqyyk2DaWYmcK@nextauth.cl715ek.mongodb.net/next-auth";
 
-API = "https://module-14-dnlchzspv-quickbd.vercel.app/api";
+API = "https://module-14-tau.vercel.app/api";
 
 //mongo pass Vl3LTL5l9gMqToGw; mongodb+srv://hzamil:YgmOqyyk2DaWYmcK@nextauth.cl715ek.mongodb.net
 
