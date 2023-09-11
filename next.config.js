@@ -2,7 +2,7 @@
 const config = require("./config");
 const nextConfig = {
   env: {
-    BASE_URL: "https://module-14-9lyz-ocfa8efd4-quickbd.vercel.app/",
+    BASE_URL: "https://module-14-tau.vercel.app/",
     DB_URI: config.DB_URI,
     API: config.API,
     NEXTAUTH_SECRET: config.NEXTAUTH_SECRET,
@@ -10,6 +10,9 @@ const nextConfig = {
     GOOGLE_CLIENT_SECRET: config.GOOGLE_CLIENT_SECRET,
     CLOUDINARY_UPLOAD_PRESET: config.CLOUDINARY_UPLOAD_PRESET,
     CLOUDINARY_URL: config.CLOUDINARY_URL,
+    GITHUB_ID: config.GITHUB_ID,
+    GITHUB_SECRET: config.GITHUB_SECRET,
+
     ADMIN_ROLES: ["admin", "super-admin", "manager", "user"],
   },
 

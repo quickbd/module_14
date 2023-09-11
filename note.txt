@@ -2,7 +2,7 @@
 মডিউল ১৪ এর এসাইনমেন্ট (Next.js Back-End & Securities)
  
  
-Assignment Link: https://module-14-tau.vercel.app/admin/register
+Assignment Link: https://module-14-tau.vercel.app
 
 MongoDB Connection String: mongodb+srv://hzamil:Vl3LTL5l9gMqToGw@assignment14.yv0nyus.mongodb.net/
 

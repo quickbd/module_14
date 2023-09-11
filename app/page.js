@@ -5,11 +5,11 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between">
       <div className="max-w-[1240px]  m-auto my-5 ">
         <div className="font-bold text-xl text-center  mt-5 mb-3">
-          <Link href="/admin/login" className="btn btn-primary   mt-5 mb-3">
+          <Link href="/login" className="btn btn-primary   mt-5 mb-3">
             Sign In
           </Link>
 
-          <Link href="/admin/register" className="btn btn-primary    mb-3 ">
+          <Link href="/register" className="btn btn-primary    mb-3 ">
             Registration
           </Link>
           <Link href="/admin/" className="btn btn-danger ">

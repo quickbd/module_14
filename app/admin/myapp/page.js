@@ -9,7 +9,7 @@ export default function MyApp() {
       <h2>My App</h2>
       <p>{JSON.stringify(session)}</p>
       <button
-        onClick={() => signOut({ callbackUrl: "/admin/login" })}
+        onClick={() => signOut({ callbackUrl: "/login" })}
         className="btn btn-danger"
       >
         Logout

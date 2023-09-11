@@ -1,7 +1,7 @@
 DB_URI =
-  "mongodb+srv://hzamil:Vl3LTL5l9gMqToGw@assignment14.yv0nyus.mongodb.net/next-auth";
+  "mongodb+srv://hzamil:YgmOqyyk2DaWYmcK@nextauth.cl715ek.mongodb.net/next-auth";
 
-API = "https://module-14-9lyz-ocfa8efd4-quickbd.vercel.app/api";
+API = "https://module-14-tau.vercel.app/api";
 
 //mongo pass Vl3LTL5l9gMqToGw;
 
@@ -11,6 +11,9 @@ GOOGLE_CLIENT_ID =
 GOOGLE_CLIENT_SECRET = "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";
 CLOUDINARY_UPLOAD_PRESET = "do7roiqk";
 CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/draoaqmsw/image/upload";
+
+GITHUB_ID = "077808f7f64b4cc42795";
+GITHUB_SECRET = "a6d43a2efd75051b222ab0c32fac8966becd6bdd";
 
 module.exports = {
   DB_URI,

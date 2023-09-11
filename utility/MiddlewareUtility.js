@@ -12,6 +12,6 @@ export async function CheckCookieAuth(req) {
       request: { headers: requestHeaders },
     });
   } catch (e) {
-    return NextResponse.redirect(new URL("/admin/login", req.url));
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 }

@@ -3,7 +3,7 @@ import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/admin/myapp/:path*"],
+  matcher: ["/admin/:path*"],
 };
 
 // role based authorization
@@ -21,7 +21,7 @@ export default withAuth(
     }
 
     if (url?.includes("/admin/myapp") && roles.includes(userRole)) {
-      return NextResponse.redirect(new URL("/admin/login", req.url));
+      return NextResponse.redirect(new URL("/login", req.url));
     }
   },
   {
