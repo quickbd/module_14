@@ -2,7 +2,7 @@
 মডিউল ১৪ এর এসাইনমেন্ট (Next.js Back-End & Securities)
  
  
-Assignment Link: https://module-14-qrq19tzkh-quickbd.vercel.app/
+Assignment Link: https://module-14-git-main-quickbd.vercel.app/
 
  
 
